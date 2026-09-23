@@ -1,128 +1,88 @@
 {
-    "name": "@types/react-dom",
-    "version": "19.3.0",
-    "description": "TypeScript definitions for react-dom",
-    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom",
-    "license": "MIT",
-    "contributors": [
-        {
-            "name": "Asana",
-            "url": "https://asana.com"
-        },
-        {
-            "name": "AssureSign",
-            "url": "http://www.assuresign.com"
-        },
-        {
-            "name": "Microsoft",
-            "url": "https://microsoft.com"
-        },
-        {
-            "name": "MartynasZilinskas",
-            "githubUsername": "MartynasZilinskas",
-            "url": "https://github.com/MartynasZilinskas"
-        },
-        {
-            "name": "Josh Rutherford",
-            "githubUsername": "theruther4d",
-            "url": "https://github.com/theruther4d"
-        },
-        {
-            "name": "Jessica Franco",
-            "githubUsername": "Jessidhia",
-            "url": "https://github.com/Jessidhia"
-        },
-        {
-            "name": "Sebastian Silbermann",
-            "githubUsername": "eps1lon",
-            "url": "https://github.com/eps1lon"
-        }
-    ],
-    "main": "",
-    "types": "index.d.ts",
-    "exports": {
-        ".": {
-            "types": {
-                "default": "./index.d.ts"
-            }
-        },
-        "./client": {
-            "types": {
-                "default": "./client.d.ts"
-            }
-        },
-        "./canary": {
-            "types": {
-                "default": "./canary.d.ts"
-            }
-        },
-        "./server": {
-            "types": {
-                "default": "./server.d.ts"
-            }
-        },
-        "./server.browser": {
-            "types": {
-                "default": "./server.browser.d.ts"
-            }
-        },
-        "./server.bun": {
-            "types": {
-                "default": "./server.bun.d.ts"
-            }
-        },
-        "./server.edge": {
-            "types": {
-                "default": "./server.edge.d.ts"
-            }
-        },
-        "./server.node": {
-            "types": {
-                "default": "./server.node.d.ts"
-            }
-        },
-        "./static": {
-            "types": {
-                "default": "./static.d.ts"
-            }
-        },
-        "./static.browser": {
-            "types": {
-                "default": "./static.browser.d.ts"
-            }
-        },
-        "./static.edge": {
-            "types": {
-                "default": "./static.edge.d.ts"
-            }
-        },
-        "./static.node": {
-            "types": {
-                "default": "./static.node.d.ts"
-            }
-        },
-        "./experimental": {
-            "types": {
-                "default": "./experimental.d.ts"
-            }
-        },
-        "./test-utils": {
-            "types": {
-                "default": "./test-utils/index.d.ts"
-            }
-        },
-        "./package.json": "./package.json"
+  "name": "postcss",
+  "version": "8.5.28",
+  "description": "Tool for transforming styles with JS plugins",
+  "keywords": [
+    "css",
+    "manipulation",
+    "parser",
+    "postcss",
+    "preprocessor",
+    "rework",
+    "source map",
+    "transform",
+    "transpiler"
+  ],
+  "homepage": "https://postcss.org/",
+  "bugs": {
+    "url": "https://github.com/postcss/postcss/issues"
+  },
+  "license": "MIT",
+  "author": "Andrey Sitnik <andrey@sitnik.es>",
+  "repository": "postcss/postcss",
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/postcss/"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-        "directory": "types/react-dom"
+    {
+      "type": "tidelift",
+      "url": "https://tidelift.com/funding/github/npm/postcss"
     },
-    "scripts": {},
-    "dependencies": {},
-    "peerDependencies": {
-        "@types/react": "^19.3.0"
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ai"
+    }
+  ],
+  "main": "./lib/postcss.js",
+  "browser": {
+    "./lib/terminal-highlight": false,
+    "source-map-js": false,
+    "path": false,
+    "url": false,
+    "fs": false
+  },
+  "types": "./lib/postcss.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/postcss.mjs",
+      "require": "./lib/postcss.js"
     },
-    "typesPublisherContentHash": "345e361651b67ba93e5757949902dbca94f299c8328b8d01937dc05b5e487d8f",
-    "typeScriptVersion": "5.6"
+    "./lib/at-rule": "./lib/at-rule.js",
+    "./lib/comment": "./lib/comment.js",
+    "./lib/container": "./lib/container.js",
+    "./lib/css-syntax-error": "./lib/css-syntax-error.js",
+    "./lib/declaration": "./lib/declaration.js",
+    "./lib/fromJSON": "./lib/fromJSON.js",
+    "./lib/input": "./lib/input.js",
+    "./lib/lazy-result": "./lib/lazy-result.js",
+    "./lib/no-work-result": "./lib/no-work-result.js",
+    "./lib/list": "./lib/list.js",
+    "./lib/map-generator": "./lib/map-generator.js",
+    "./lib/node": "./lib/node.js",
+    "./lib/parse": "./lib/parse.js",
+    "./lib/parser": "./lib/parser.js",
+    "./lib/postcss": "./lib/postcss.js",
+    "./lib/previous-map": "./lib/previous-map.js",
+    "./lib/processor": "./lib/processor.js",
+    "./lib/result": "./lib/result.js",
+    "./lib/root": "./lib/root.js",
+    "./lib/rule": "./lib/rule.js",
+    "./lib/stringifier": "./lib/stringifier.js",
+    "./lib/stringify": "./lib/stringify.js",
+    "./lib/symbols": "./lib/symbols.js",
+    "./lib/terminal-highlight": "./lib/terminal-highlight.js",
+    "./lib/tokenize": "./lib/tokenize.js",
+    "./lib/warn-once": "./lib/warn-once.js",
+    "./lib/warning": "./lib/warning.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.18",
+    "picocolors": "^1.1.1",
+    "source-map-js": "^1.2.1"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14"
+  }
 }

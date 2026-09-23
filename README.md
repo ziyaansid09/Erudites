@@ -1,16 +1,27 @@
-# Installation
-> `npm install --save @types/react-dom`
+# PostCSS
 
-# Summary
-This package contains type definitions for react-dom (https://react.dev/).
+<img align="right" width="95" height="95"
+     alt="Philosopher’s stone, logo of PostCSS"
+     src="https://postcss.org/logo.svg">
 
-# Details
-Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom.
+PostCSS is a tool for transforming styles with JS plugins.
+These plugins can lint your CSS, support variables and mixins,
+transpile future CSS syntax, inline images, and more.
 
-### Additional Details
- * Last updated: Wed, 09 Sep 2026 18:05:03 GMT
- * Dependencies: none
- * Peer dependencies: [@types/react](https://npmjs.com/package/@types/react)
+PostCSS is used by industry leaders including Wikipedia, Twitter, Alibaba,
+and JetBrains. The [Autoprefixer] and [Stylelint] PostCSS plugins are some of the most popular CSS tools.
 
-# Credits
-These definitions were written by [Asana](https://asana.com), [AssureSign](http://www.assuresign.com), [Microsoft](https://microsoft.com), [MartynasZilinskas](https://github.com/MartynasZilinskas), [Josh Rutherford](https://github.com/theruther4d), [Jessica Franco](https://github.com/Jessidhia), and [Sebastian Silbermann](https://github.com/eps1lon).
+---
+
+<img src="https://cdn.evilmartians.com/badges/logo-no-label.svg" alt="" width="22" height="16" />  PostCSS is built by <b><a href="https://evilmartians.com/">Evil Martians</a></b>, an American design and engineering consultancy for <b>developer tools, AI, and cybersecurity startups</b>.
+
+---
+
+[Abstract Syntax Tree]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
+[Evil Martians]: https://evilmartians.com/?utm_source=postcss
+[Autoprefixer]: https://github.com/postcss/autoprefixer
+[Stylelint]: https://stylelint.io/
+[plugins]: https://github.com/postcss/postcss#plugins
+
+## Docs
+Read full docs **[here](https://postcss.org/)**.
