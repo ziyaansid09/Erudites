@@ -1,3 +1,3 @@
-# Oxc Types
+# `@rolldown/binding-win32-x64-msvc`
 
-Typescript definitions for Oxc AST nodes.
+This is the **x86_64-pc-windows-msvc** binary for `@rolldown/binding`
