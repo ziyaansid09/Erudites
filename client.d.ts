@@ -1,105 +1,285 @@
-/**
- * WARNING: This entrypoint is only available starting with `react-dom@18.0.0-rc.1`
- */
+/// <reference path="./types/importMeta.d.ts" />
 
-// See https://github.com/facebook/react/blob/main/packages/react-dom/client.js to see how the exports are declared,
+// virtual modules
+declare module 'vite/modulepreload-polyfill' {}
 
-import React = require("react");
+// CSS modules
+type CSSModuleClasses = { readonly [key: string]: string }
 
-export {};
-
-declare const REACT_FORM_STATE_SIGIL: unique symbol;
-export interface ReactFormState {
-    [REACT_FORM_STATE_SIGIL]: never;
+declare module '*.module.css' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.scss' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.sass' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.less' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.styl' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.stylus' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.pcss' {
+  const classes: CSSModuleClasses
+  export default classes
+}
+declare module '*.module.sss' {
+  const classes: CSSModuleClasses
+  export default classes
 }
 
-export interface HydrationOptions {
-    formState?: ReactFormState | null;
-    /**
-     * Prefix for `useId`.
-     */
-    identifierPrefix?: string;
-    onUncaughtError?:
-        | ((error: unknown, errorInfo: { componentStack?: string | undefined }) => void)
-        | undefined;
-    onRecoverableError?: (error: unknown, errorInfo: ErrorInfo) => void;
-    onCaughtError?:
-        | ((
-            error: unknown,
-            errorInfo: {
-                componentStack?: string | undefined;
-                errorBoundary?: React.Component<unknown> | undefined;
-            },
-        ) => void)
-        | undefined;
+// CSS
+declare module '*.css' {}
+declare module '*.scss' {}
+declare module '*.sass' {}
+declare module '*.less' {}
+declare module '*.styl' {}
+declare module '*.stylus' {}
+declare module '*.pcss' {}
+declare module '*.sss' {}
+
+// Built-in asset types
+// see `src/node/constants.ts`
+
+// images
+declare module '*.apng' {
+  const src: string
+  export default src
+}
+declare module '*.bmp' {
+  const src: string
+  export default src
+}
+declare module '*.png' {
+  const src: string
+  export default src
+}
+declare module '*.jpg' {
+  const src: string
+  export default src
+}
+declare module '*.jpeg' {
+  const src: string
+  export default src
+}
+declare module '*.jfif' {
+  const src: string
+  export default src
+}
+declare module '*.pjpeg' {
+  const src: string
+  export default src
+}
+declare module '*.pjp' {
+  const src: string
+  export default src
+}
+declare module '*.gif' {
+  const src: string
+  export default src
+}
+declare module '*.svg' {
+  const src: string
+  export default src
+}
+declare module '*.ico' {
+  const src: string
+  export default src
+}
+declare module '*.webp' {
+  const src: string
+  export default src
+}
+declare module '*.avif' {
+  const src: string
+  export default src
+}
+declare module '*.cur' {
+  const src: string
+  export default src
+}
+declare module '*.jxl' {
+  const src: string
+  export default src
 }
 
-export interface RootOptions {
-    /**
-     * Prefix for `useId`.
-     */
-    identifierPrefix?: string;
-    onUncaughtError?:
-        | ((error: unknown, errorInfo: { componentStack?: string | undefined }) => void)
-        | undefined;
-    onRecoverableError?: (error: unknown, errorInfo: ErrorInfo) => void;
-    onCaughtError?:
-        | ((
-            error: unknown,
-            errorInfo: {
-                componentStack?: string | undefined;
-                errorBoundary?: React.Component<unknown> | undefined;
-            },
-        ) => void)
-        | undefined;
+// media
+declare module '*.mp4' {
+  const src: string
+  export default src
+}
+declare module '*.webm' {
+  const src: string
+  export default src
+}
+declare module '*.ogg' {
+  const src: string
+  export default src
+}
+declare module '*.mp3' {
+  const src: string
+  export default src
+}
+declare module '*.wav' {
+  const src: string
+  export default src
+}
+declare module '*.flac' {
+  const src: string
+  export default src
+}
+declare module '*.aac' {
+  const src: string
+  export default src
+}
+declare module '*.opus' {
+  const src: string
+  export default src
+}
+declare module '*.mov' {
+  const src: string
+  export default src
+}
+declare module '*.m4a' {
+  const src: string
+  export default src
+}
+declare module '*.vtt' {
+  const src: string
+  export default src
 }
 
-export interface ErrorInfo {
-    componentStack?: string;
+// fonts
+declare module '*.woff' {
+  const src: string
+  export default src
+}
+declare module '*.woff2' {
+  const src: string
+  export default src
+}
+declare module '*.eot' {
+  const src: string
+  export default src
+}
+declare module '*.ttf' {
+  const src: string
+  export default src
+}
+declare module '*.otf' {
+  const src: string
+  export default src
 }
 
-export interface Root {
-    render(children: React.ReactNode): void;
-    unmount(): void;
+// other
+declare module '*.webmanifest' {
+  const src: string
+  export default src
+}
+declare module '*.pdf' {
+  const src: string
+  export default src
+}
+declare module '*.txt' {
+  const src: string
+  export default src
 }
 
-/**
- * Different release channels declare additional types of ReactNode this particular release channel accepts.
- * App or library types should never augment this interface.
- */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_CREATE_ROOT_CONTAINERS {}
+// wasm?init
+declare module '*.wasm?init' {
+  const initWasm: (
+    options?: WebAssembly.Imports,
+  ) => Promise<WebAssembly.Instance>
+  export default initWasm
+}
 
-export type Container =
-    | Element
-    | DocumentFragment
-    | Document
-    | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_CREATE_ROOT_CONTAINERS[
-        keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_CREATE_ROOT_CONTAINERS
-    ];
+// wasm (ESM integration)
+declare module '*.wasm' {}
 
-/**
- * createRoot lets you create a root to display React components inside a browser DOM node.
- *
- * @see {@link https://react.dev/reference/react-dom/client/createRoot API Reference for `createRoot`}
- */
-export function createRoot(container: Container, options?: RootOptions): Root;
+// web worker
+declare module '*?worker' {
+  const workerConstructor: {
+    new (options?: { name?: string }): Worker
+  }
+  export default workerConstructor
+}
 
-/**
- * Same as `createRoot()`, but is used to hydrate a container whose HTML contents were rendered by ReactDOMServer.
- *
- * React will attempt to attach event listeners to the existing markup.
- *
- * **Example Usage**
- *
- * ```jsx
- * hydrateRoot(document.querySelector('#root'), <App />)
- * ```
- *
- * @see https://react.dev/reference/react-dom/client/hydrateRoot
- */
-export function hydrateRoot(
-    container: Element | Document,
-    initialChildren: React.ReactNode,
-    options?: HydrationOptions,
-): Root;
+declare module '*?worker&inline' {
+  const workerConstructor: {
+    new (options?: { name?: string }): Worker
+  }
+  export default workerConstructor
+}
+
+declare module '*?worker&url' {
+  const src: string
+  export default src
+}
+
+declare module '*?sharedworker' {
+  const sharedWorkerConstructor: {
+    new (options?: { name?: string }): SharedWorker
+  }
+  export default sharedWorkerConstructor
+}
+
+declare module '*?sharedworker&inline' {
+  const sharedWorkerConstructor: {
+    new (options?: { name?: string }): SharedWorker
+  }
+  export default sharedWorkerConstructor
+}
+
+declare module '*?sharedworker&url' {
+  const src: string
+  export default src
+}
+
+declare module '*?raw' {
+  const src: string
+  export default src
+}
+
+declare module '*?url' {
+  const src: string
+  export default src
+}
+
+declare module '*?inline' {
+  const src: string
+  export default src
+}
+
+declare module '*?no-inline' {
+  const src: string
+  export default src
+}
+
+declare module '*?url&inline' {
+  const src: string
+  export default src
+}
+
+declare module '*?url&no-inline' {
+  const src: string
+  export default src
+}
+
+declare interface VitePreloadErrorEvent extends Event {
+  payload: Error
+}
+
+declare interface WindowEventMap {
+  'vite:preloadError': VitePreloadErrorEvent
+}
