@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-erudites}
+      POSTGRES_USER: ${POSTGRES_USER:-erudites}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-erudites}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://erudites:erudites@db:5432/erudites}
+      JWT_SECRET: ${JWT_SECRET:-development-secret}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes: [./question-bank:/app/question-bank]
+    ports: ["8000:8000"]
+    depends_on:
+      db: {condition: service_healthy}
+  web:
+    build: ./frontend
+    environment: [VITE_API_URL=${VITE_API_URL:-http://localhost:8000}]
+    ports: ["5173:80"]
+    depends_on: [api]
+volumes:
+  postgres_data:
